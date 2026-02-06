@@ -1,0 +1,16 @@
+# Environment variables
+.env
+
+# Superset data
+superset.db
+superset_home/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo

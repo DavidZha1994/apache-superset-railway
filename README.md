@@ -1,45 +1,32 @@
 # Apache Superset on Railway
 
-Deploy Apache Superset 4.x to Railway with one click.
-
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/DavidZha1994/apache-superset-railway)
+
+Deploy **Apache Superset 4.x** to [Railway](https://railway.app) with one click. Connect to 50+ databases with a modern analytics UI — production-ready out of the box.
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/yzha)
 
 ## Features
 
-- **Superset 4.x** - Latest version with modern UI and features
-- **PostgreSQL & MySQL** - Database drivers pre-installed
-- **Auto Setup** - Admin user and database auto-configured
-- **Railway Optimized** - Production-ready configuration
+| Feature | Description |
+|---------|-------------|
+| **Superset 4.x** | Latest version with modern UI and features |
+| **Database Drivers** | PostgreSQL and MySQL drivers pre-installed |
+| **Auto Setup** | Admin user and database auto-configured on first boot |
+| **Railway Optimized** | Production-ready with proxy fix, CSRF, and caching |
+| **50+ Data Sources** | Connect any SQLAlchemy-compatible database |
 
-## Deploy Steps
+## One-Click Deploy
 
-### Step 1: Deploy Superset
-Click the **Deploy on Railway** button above
+Click the **Deploy on Railway** button above, then:
 
-### Step 2: Add PostgreSQL
-1. In your Railway project, click **+ New**
-2. Select **Database** → **Add PostgreSQL**
+1. In your Railway project, click **+ New** → **Database** → **Add PostgreSQL**
+2. Click your **Superset** service → **Variables** → add `DATABASE_URL` = `${{Postgres.DATABASE_URL}}`
+3. Redeploy the service
+4. Wait 2–3 minutes for initialization
+5. Open your Superset service URL and login with `admin` / `admin`
 
-### Step 3: Connect Database
-1. Click on your **Superset** service
-2. Go to **Variables** tab
-3. Add new variable: `DATABASE_URL` = `${{Postgres.DATABASE_URL}}`
-4. Redeploy the service
-
-### Step 4: Access Superset
-1. Wait 2-3 minutes for initialization
-2. Open your Superset service URL
-3. Login with `admin` / `admin`
-
-## Default Credentials
-
-| Username | Password |
-|----------|----------|
-| `admin` | `admin` |
-
-> ⚠️ **Security**: Change the default password after first login!
+> **Security**: Change the default password after first login!
 
 ## Environment Variables
 
@@ -53,12 +40,18 @@ Click the **Deploy on Railway** button above
 
 ## Supported Databases
 
-Connect to your data warehouses:
+Connect to your data warehouses via Superset's built-in SQLAlchemy support:
 
-- PostgreSQL
-- MySQL / MariaDB
-- SQLite
-- And 40+ more via SQLAlchemy
+PostgreSQL · MySQL · MariaDB · SQLite · ClickHouse · Trino · BigQuery · Snowflake · Redshift · and [40+ more](https://superset.apache.org/docs/configuration/databases)
+
+## Local Development
+
+```bash
+cp .env.example .env
+docker compose up -d
+```
+
+Open http://localhost:8088 and login with `admin` / `admin`.
 
 ## Resources
 
@@ -68,4 +61,4 @@ Connect to your data warehouses:
 
 ## License
 
-Apache License 2.0
+[Apache 2.0](LICENSE)
