@@ -1,6 +1,6 @@
 # Apache Superset on Railway
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/DavidZha1994/apache-superset-railway)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/DavidZha1994/superset-railway)
 
 Deploy **Apache Superset 4.x** to [Railway](https://railway.app) with one click. Connect to 50+ databases with a modern analytics UI — production-ready out of the box.
 
